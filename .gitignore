@@ -1,0 +1,6 @@
+.secrets.py
+**/*data*/
+**/*.pth
+.idea
+venv
+**/images
