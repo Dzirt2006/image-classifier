@@ -1,13 +1,16 @@
 import os
 from pathlib import Path
-
 from fastai.data.transforms import get_image_files
 from fastai.vision.utils import download_images, verify_images
 from fastbook import search_images_bing
 
-# from fastbook import *
 
-key = os.environ.get('AZURE_SEARCH_KEY', '')
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from secrets_local import AZURE_SEARCH_KEY
+
+
+key = os.environ.get('AZURE_SEARCH_KEY', AZURE_SEARCH_KEY)
 
 
 def download_imgs(base_path, labels, search_phrase):
@@ -31,7 +34,7 @@ def validate_images(img_root_path):
 
 
 if __name__ == '__main__':
-    parrots_type = 'lovebird', 'green cheek conure', 'jako'
+    parrots_type = 'lovebird', 'green cheek conure', 'grey african','cockatiel'
     base_path = './images'
     download_imgs(base_path, parrots_type, "parrot")
     validate_images(base_path)

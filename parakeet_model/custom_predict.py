@@ -68,7 +68,7 @@ def load_model(model_path, num_classes):
 # Example usage
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 class_names = get_class_names('images')  # List of class names
-model = load_model('simple_nn_model.pth', num_classes=len(class_names))  # Load your trained model here
+model = load_model('simple_nn_model_fine_tuned_4_classes.pth', num_classes=len(class_names))  # Load your trained model here
 
 image_path = 'manual_test_data/jako.jpeg'  # Replace with your image path
 predicted_class = predict_image(image_path, model, device, class_names)

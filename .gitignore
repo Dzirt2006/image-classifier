@@ -1,6 +1,7 @@
-.secrets.py
+secrets_local.py
 **/*data*/
 **/*.pth
 .idea
 venv
 **/images
+__pycache__
